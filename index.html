@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Personale</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background: linear-gradient(135deg, #7f0000, #b30000, #ff1a1a);
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* MENU */
+
+    nav{
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,0.25);
+    }
+
+    nav h2{
+      font-size:28px;
+      font-weight:700;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#ffd5d5;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:120px 20px 60px;
+    }
+
+    .hero-content{
+      max-width:800px;
+    }
+
+    .hero img{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid white;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+      margin-bottom:25px;
+    }
+
+    .hero h1{
+      font-size:65px;
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    .hero p{
+      font-size:22px;
+      opacity:0.95;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 35px;
+      background:white;
+      color:#b30000;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      background:#ffe5e5;
+    }
+
+    /* SEZIONI */
+
+    section{
+      padding:90px 10%;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.2);
+      backdrop-filter:blur(12px);
+      padding:40px;
+      border-radius:25px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    h2{
+      font-size:40px;
+      margin-bottom:25px;
+    }
+
+    p{
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    /* GALLERIA */
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:25px;
+      margin-top:30px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+      border-radius:20px;
+      transition:0.4s;
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .gallery img:hover{
+      transform:scale(1.05);
+    }
+
+    /* BOTTONI SOCIAL/LIBRI */
+
+    .social{
+      margin-top:25px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .social a{
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:50px;
+      background:white;
+      color:#b30000;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .social a:hover{
+      background:#ffd5d5;
+      transform:translateY(-2px);
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:rgba(0,0,0,0.25);
+      margin-top:40px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      h2{
+        font-size:32px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- MENU -->
+  <nav>
+
+    <h2>Il Mio Sito</h2>
+
+    <ul>
+      <li><a href="#about">Chi Sono</a></li>
+      <li><a href="#bio">Biografia</a></li>
+      <li><a href="#gallery">Foto</a></li>
+      <li><a href="#books">Libri</a></li>
+      <li><a href="#contact">Contatti</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <img src="foto-profilo.jpg" alt="Foto Profilo">
+
+      <h1>Tommaso Specchio</h1>
+
+      <p>
+        voxly_web
+      </p>
+
+      <a href="#about" class="btn">
+        Scopri di più
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- CHI SONO -->
+  <section id="about">
+
+    <div class="card">
+
+      <h2>Chi Sono</h2>
+
+      <p>
+        Ciao! Sono Tommaso Specchio e frequento l'Istituto di Istruzione Superiore Santoni di Pisa, indirizzo agrario.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- BIOGRAFIA -->
+  <section id="bio">
+
+    <div class="card">
+
+      <h2>Biografia</h2>
+
+      <p>
+Sono nato a Pisa nel 2009 e vivo a Calambrone.
+
+Le mie passioni sono: i siti internet, scrivere storie, i videogiochi e le serie TV.
+
+Insieme a un mio compagno di classe ho scritto alcuni libri e fumetti.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERIA FOTO -->
+  <section id="gallery">
+
+    <h2>Foto</h2>
+
+    <div class="gallery">
+
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
+
+
+    </div>
+
+  </section>
+
+  <!-- LIBRI -->
+  <section id="books">
+
+    <div class="card">
+
+      <h2>I Miei Libri</h2>
+
+      <p>
+        Qui puoi trovare alcuni dei libri che ho scritto.
+      </p>
+
+      <br>
+
+      <div class="social">
+
+        <a href="https://libriditommyemarco.github.io/horrorschoolgamer/" target="_blank">
+          📘 Horror School Gamer
+        </a>
+
+        <a href="https://libriditommyemarco.github.io/infernodimarco/" target="_blank">
+          📕 L'Inferno di Marco
+        </a>
+
+        <a href="https://libriditommyemarco.github.io/infernoafumetti/" target="_blank">
+          📗 L'Inferno a fumetti
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contact">
+
+    <div class="card">
+
+      <h2>Contatti</h2>
+
+      <p>Email: voxtlytom@gmail.com</p>
+
+      <div class="social">
+      <p>Instagram: @voxtly_web</p>
+
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026 Tommaso Specchio - Portfolio Personale
+    </p>
+
+  </footer>
+
+</body>
+</html>
